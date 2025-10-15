@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
         message: document.getElementById('message').value
       };
       
-      console.log('Form submitted:', formData);
+      console.log('Formulário enviado:', formData);
       
-      alert('Thank you for your interest! Our team will contact you shortly.');
+      alert('Agradecemos pelo interesse! Nossa equipe entrará em contato com você em breve.');
       
       contactForm.reset();
     });
