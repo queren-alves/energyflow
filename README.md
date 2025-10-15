@@ -1,4 +1,4 @@
-# ⚡ EnergyFlow
+# ⚡ Plataforma EnergyFlow
 
 Plataforma web de **monitoramento e gerenciamento energético** com foco em **eficiência energética**.  
 O principal objetivo é permitir o **monitoramento em tempo real** do consumo de energia, ajudando usuários e empresas a otimizar o uso e reduzir custos.
