@@ -255,6 +255,271 @@ section {
   line-height: 1.6;
 }
 
+/* seção demonstração */
+.data-visualization-section {
+  padding: 80px 0;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  overflow: visible;
+}
+
+.data-visualization-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.data-visualization-header span {
+  color: rgb(16, 185, 129);
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgb(249, 250, 251);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: inline-block;
+  line-height: 22.4px;
+  margin-block-end: 16px;
+  margin-bottom: 16px;
+  padding-block-end: 6px;
+  padding-block-start: 6px;
+  padding-bottom: 6px;
+  padding-inline-end: 16px;
+  padding-inline-start: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 6px;
+}
+
+.data-visualization-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 67.2px;
+  margin-block-end: 16px;
+  margin-bottom: 16px;
+}
+
+.data-visualization-header p {
+  color: rgb(107, 114, 128);
+  font-size: 18px;
+  line-height: 28.8px;
+}
+
+.data-visualization-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 32px;
+}
+
+.data-viz-card {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 231, 235);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.data-viz-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(16, 185, 129), rgb(59, 130, 246));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.data-viz-card:hover {
+  transform: translateY(-8px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px;
+  border-color: rgb(16, 185, 129);
+}
+
+.data-viz-card:hover::before {
+  transform: scaleX(1);
+}
+
+.data-viz-card-header {
+  margin-bottom: 24px;
+}
+
+.data-viz-card .icon-badge {
+  background: linear-gradient(135deg, rgb(236, 253, 245), rgb(239, 246, 255));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.data-viz-card .icon-badge img {
+  height: 28px;
+  width: 28px;
+}
+
+.data-viz-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.data-viz-card p {
+  color: rgb(107, 114, 128);
+  font-size: 14px;
+  line-height: 22.4px;
+}
+
+.chart-container {
+  position: relative;
+  height: 200px;
+  margin-bottom: 16px;
+}
+
+.doughnut-container {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.center-percentage {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: rgb(16, 185, 129);
+  line-height: 1;
+}
+
+.center-label {
+  display: block;
+  font-size: 14px;
+  color: rgb(107, 114, 128);
+  margin-top: 4px;
+}
+
+.chart-tooltip {
+  background-color: rgb(249, 250, 251);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.data-viz-card:hover .chart-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+}
+
+.tooltip-value {
+  font-size: 14px;
+  color: rgb(16, 185, 129);
+  font-weight: 600;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 13px;
+  color: rgb(107, 114, 128);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.normal {
+  background-color: rgb(16, 185, 129);
+}
+
+.legend-dot.warning {
+  background-color: rgb(251, 191, 36);
+}
+
+.legend-dot.critical {
+  background-color: rgb(239, 68, 68);
+}
+
+.savings-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  margin-top: 16px;
+}
+
+.savings-stat {
+  background-color: rgb(249, 250, 251);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(16, 185, 129);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgb(107, 114, 128);
+}
+
 /* seção benefícios */
 .benefits {
   background: var(--light-bg);
@@ -412,120 +677,6 @@ section {
 .author-title {
   font-size: 14px;
   color: var(--text-gray);
-}
-
-/* seção preços */
-.pricing {
-  background: var(--white);
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.pricing-card {
-  padding: 40px;
-  background: var(--white);
-  border: 2px solid var(--border-color);
-  border-radius: 16px;
-  transition: var(--transition);
-  position: relative;
-}
-
-.pricing-card:hover {
-  border-color: var(--primary-green);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-8px);
-}
-
-.pricing-card-featured {
-  border-color: var(--primary-green);
-  box-shadow: var(--shadow-lg);
-  transform: scale(1.05);
-}
-
-.pricing-card-featured:hover {
-  transform: scale(1.08) translateY(-8px);
-}
-
-.popular-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-green);
-  color: var(--white);
-  padding: 6px 20px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.pricing-plan {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 16px;
-}
-
-.pricing-price {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.price-currency {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--text-gray);
-}
-
-.price-amount {
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--text-dark);
-  line-height: 1;
-}
-
-.price-period {
-  font-size: 18px;
-  color: var(--text-gray);
-  margin-left: 4px;
-}
-
-.pricing-description {
-  font-size: 15px;
-  color: var(--text-gray);
-}
-
-.pricing-features {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 0;
-  font-size: 15px;
-  color: var(--text-gray);
-}
-
-.feature-item svg {
-  flex-shrink: 0;
 }
 
 /* seção contato */

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <!-- header -->
@@ -26,9 +27,9 @@
         <nav class="nav" id="nav">
           <a href="#home" class="nav-link">Início</a>
           <a href="#features" class="nav-link">Recursos</a>
+          <a href="#data-visualization" class="nav-link">Demonstração</a>
           <a href="#benefits" class="nav-link">Benefícios</a>
           <a href="#use-cases" class="nav-link">Casos de uso</a>
-          <a href="#pricing" class="nav-link">Preços</a>
           <a href="#contact" class="nav-link">Contato</a>
         </nav>
         
@@ -187,6 +188,106 @@
       </div>
     </div>
   </section>
+
+  <!-- seção visualização -->
+  <section id="data-visualization" class="data-visualization-section">
+      <div class="container">
+        <div class="data-visualization-header">
+          <span>Visualização de Dados</span>
+          <h2>Visualize seus dados de energia em tempo real</h2>
+          <p>Monitore e compreenda seu consumo com painéis interativos e insights inteligentes</p>
+        </div>
+        <div class="data-visualization-grid">
+          <div class="data-viz-card">
+            <div class="data-viz-card-header">
+              <div class="icon-badge">
+                <img src="https://c.animaapp.com/mgks5rbcIM9w6x/assets/icon-2.svg" alt="Icon" />
+              </div>
+              <h3>Consumo de Energia por Ambiente</h3>
+              <p>Acompanhe o uso de energia de cada ambiente em tempo real</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-tooltip">
+              <span class="tooltip-label">Cozinha</span>
+              <span class="tooltip-value">3.2 kWh hoje</span>
+            </div>
+          </div>
+
+          <div class="data-viz-card">
+            <div class="data-viz-card-header">
+              <div class="icon-badge">
+                <img src="https://c.animaapp.com/mgks5rbcIM9w6x/assets/icon-3.svg" alt="Icon" />
+              </div>
+              <h3>Alertas de Consumo</h3>
+              <p>Identifique instantaneamente os dispositivos que estão consumindo mais energia do que o esperado</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-dot normal"></span>
+                <span>Normal</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot warning"></span>
+                <span>Aviso</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot critical"></span>
+                <span>Crítico</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-viz-card">
+            <div class="data-viz-card-header">
+              <div class="icon-badge">
+                <img src="https://c.animaapp.com/mgks5rbcIM9w6x/assets/icon-4.svg" alt="Icon" />
+              </div>
+              <h3>Comparação de Dispositivos</h3>
+              <p>Compare os níveis de consumo entre diferentes dispositivos de forma rápida e prática</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="horizontalBarChart"></canvas>
+            </div>
+            <div class="chart-tooltip">
+              <span class="tooltip-label">Sistema de Ar Condicionado</span>
+              <span class="tooltip-value">Maior consumidor</span>
+            </div>
+          </div>
+
+          <div class="data-viz-card">
+            <div class="data-viz-card-header">
+              <div class="icon-badge">
+                <img src="https://c.animaapp.com/mgks5rbcIM9w6x/assets/icon-8.svg" alt="Icon" />
+              </div>
+              <h3>Visão Geral das Economias de Energia</h3>
+              <p>Veja como suas otimizações estão reduzindo o consumo total de energia</p>
+            </div>
+            <div class="chart-container doughnut-container">
+              <canvas id="doughnutChart"></canvas>
+              <div class="chart-center-text">
+                <span class="center-percentage">28%</span>
+                <span class="center-label">Economizado</span>
+              </div>
+            </div>
+            <div class="savings-stats">
+              <div class="savings-stat">
+                <span class="stat-value">R$1.240,00</span>
+                <span class="stat-label">Neste mês</span>
+              </div>
+              <div class="savings-stat">
+                <span class="stat-value">342 kWh</span>
+                <span class="stat-label">Reduzido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <!-- seção benefícios -->
   <section class="benefits" id="benefits">
@@ -374,185 +475,6 @@
     </div>
   </section>
 
-  <!-- seção preços -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Preços</span>
-        <h2 class="section-title">Escolha o plano perfeito para suas necessidades</h2>
-        <p class="section-description">Opções de preços flexíveis para empresas de todos os tamanhos</p>
-      </div>
-      
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3 class="pricing-plan">Básico</h3>
-            <div class="pricing-price">
-              <span class="price-currency">R$</span>
-              <span class="price-amount">0</span>
-              <span class="price-period">/mês</span>
-            </div>
-            <p class="pricing-description">Perfeito para pequenas empresas</p>
-          </div>
-          <ul class="pricing-features">
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Até 5 pontos de monitoramento</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Monitoramento em tempo real</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Alertas básicos</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Relatórios mensais</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Suporte por e-mail</span>
-            </li>
-          </ul>
-          <button class="btn btn-secondary btn-full">Começar Agora</button>
-        </div>
-        
-        <div class="pricing-card pricing-card-featured">
-          <div class="popular-badge">Mais Popular</div>
-          <div class="pricing-header">
-            <h3 class="pricing-plan">Profissional</h3>
-            <div class="pricing-price">
-              <span class="price-currency">R$</span>
-              <span class="price-amount">299</span>
-              <span class="price-period">/mês</span>
-            </div>
-            <p class="pricing-description">Ideal para empresas em crescimento</p>
-          </div>
-          <ul class="pricing-features">
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Até 25 pontos de monitoramento</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Monitoramento em tempo real</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Alertas personalizados avançados</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Relatórios automatizados diários e semanais</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Acesso à API</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Previsão com IA</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Suporte prioritário</span>
-            </li>
-          </ul>
-          <button class="btn btn-primary btn-full">Começar Agora</button>
-        </div>
-        
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3 class="pricing-plan">Empresarial</h3>
-            <div class="pricing-price">
-              <span class="price-currency">R$</span>
-              <span class="price-amount">799</span>
-              <span class="price-period">/mês</span>
-            </div>
-            <p class="pricing-description">Para grandes organizações</p>
-          </div>
-          <ul class="pricing-features">
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Pontos de monitoramento ilimitados</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Monitoramento em tempo real</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Configuração personalizada de alertas</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Agendamentos de relatórios sob medida</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Acesso completo à API</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>IA e análises avançadas</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Gerente de conta dedicado</span>
-            </li>
-            <li class="feature-item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10L8 13L15 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Suporte telefônico 24h/7</span>
-            </li>
-          </ul>
-          <button class="btn btn-secondary btn-full">Contatar Vendas</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- seção contato -->
   <section class="contact" id="contact">
     <div class="container">
@@ -695,5 +617,6 @@
   </footer>
 
   <script src="src/javascript/script.js"></script>
+  <script src="src/javascript/view.js"></script>
 </body>
 </html>
