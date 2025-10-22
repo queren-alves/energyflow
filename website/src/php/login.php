@@ -71,7 +71,7 @@ try {
                 'email' => $user['email']
             ]
         ],
-        'src/php/dashboard.php'
+        'dashboard.html'
     );
 
 } catch (PDOException $e) {

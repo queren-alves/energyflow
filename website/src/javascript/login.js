@@ -79,7 +79,7 @@ const loginForm = document.getElementById('loginForm');
           if (result.success) {
             showAlert(result.message, 'success');
             setTimeout(() => {
-              window.location.href = result.redirect || 'src/php/dashboard.php';
+              window.location.href = result.redirect || 'dashboard.html';
             }, 1000);
           } else {
             showAlert(result.message, 'error');
