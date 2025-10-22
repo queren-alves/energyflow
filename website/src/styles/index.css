@@ -520,91 +520,6 @@ section {
   color: rgb(107, 114, 128);
 }
 
-/* seção benefícios */
-.benefits {
-  background: var(--light-bg);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.benefit-card {
-  padding: 40px;
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-
-.benefit-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.benefit-icon {
-  margin-bottom: 24px;
-}
-
-.benefit-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--text-dark);
-}
-
-.benefit-description {
-  font-size: 16px;
-  color: var(--text-gray);
-  line-height: 1.6;
-}
-
-/* seção casos de uso */
-.use-cases {
-  background: var(--white);
-}
-
-.use-cases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.use-case-card {
-  padding: 32px;
-  background: var(--light-bg);
-  border-radius: 16px;
-  text-align: center;
-  transition: var(--transition);
-}
-
-.use-case-card:hover {
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.use-case-image {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.use-case-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--text-dark);
-}
-
-.use-case-description {
-  font-size: 15px;
-  color: var(--text-gray);
-  line-height: 1.6;
-}
-
 /* seção depoimentos */
 .testimonials {
   background: var(--light-bg);
@@ -768,7 +683,7 @@ section {
   min-height: 120px;
 }
 
-/* Animations */
+/* animações */
 @keyframes growUp {
   from {
     transform: scaleY(0);
@@ -864,6 +779,10 @@ section {
   .contact-title {
     font-size: 32px;
   }
+
+  .data-visualization-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -881,5 +800,34 @@ section {
 
   .contact-form-wrapper {
     padding: 24px;
+  }
+}
+
+/* responsividade dos gráficos Chart.js */
+.chart-container {
+  position: relative;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1.6 / 1;
+  min-height: 180px;
+  max-height: 280px;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    aspect-ratio: 1 / 1;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    aspect-ratio: 1 / 1.2;
+    min-height: 140px;
   }
 }

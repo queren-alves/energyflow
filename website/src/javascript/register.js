@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(registerForm);
         
         try {
-          const response = await fetch('php/register.php', {
+          const response = await fetch('src/php/register.php', {
             method: 'POST',
             body: formData
           });

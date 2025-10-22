@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {  
-  // Data Visualization Charts
+  // charts
   const initializeCharts = () => {
-    // Check if Chart.js is loaded
+    // verifica se Chart.js ta carregado
     if (typeof Chart === 'undefined') {
       console.error('Chart.js is not loaded');
       return;
     }
 
-    // Line Chart - Energy Consumption by Environment
+    // line chart 
 const lineCtx = document.getElementById('lineChart');
 if (lineCtx) {
   const lineChart = new Chart(lineCtx, {
@@ -15,7 +15,7 @@ if (lineCtx) {
     data: {
       labels: ['6am', '9am', '12pm', '3pm', '6pm', '9pm'],
       datasets: [{
-        label: 'Kitchen',
+        label: 'Cozinha',
         data: [2.1, 2.8, 3.5, 3.2, 4.1, 3.8],
         borderColor: 'rgb(16, 185, 129)',
         backgroundColor: 'rgba(16, 185, 129, 0.1)',
@@ -29,8 +29,8 @@ if (lineCtx) {
       responsive: true,
       maintainAspectRatio: false,
       animation: {
-        duration: 2000,           // antes: 1000
-        easing: 'easeInOutCubic'  // transição mais suave
+        duration: 2000,           
+        easing: 'easeInOutCubic' 
       },
       plugins: {
         legend: { display: false },
@@ -53,24 +53,24 @@ if (lineCtx) {
     }
   });
 
-  // Animate line chart data
+  // animação line chart
   setInterval(() => {
     lineChart.data.datasets[0].data = lineChart.data.datasets[0].data.map(() =>
       (Math.random() * 3 + 1.5).toFixed(1)
     );
     lineChart.update('active');
-  }, 5000); // antes: 3000
+  }, 5000); 
 }
 
-// Bar Chart - Consumption Alerts
+// bar chart
 const barCtx = document.getElementById('barChart');
 if (barCtx) {
   const barChart = new Chart(barCtx, {
     type: 'bar',
     data: {
-      labels: ['Device 1', 'Device 2', 'Device 3', 'Device 4', 'Device 5'],
+      labels: ['Disp 1', 'Disp 2', 'Disp 3', 'Disp 4', 'Disp 5'],
       datasets: [{
-        label: 'Consumption',
+        label: 'Consumo',
         data: [65, 85, 45, 95, 70],
         backgroundColor: [
           'rgb(16, 185, 129)',
@@ -112,7 +112,7 @@ if (barCtx) {
     }
   });
 
-  // Animate bar chart data
+  // animação bar chart 
   setInterval(() => {
     barChart.data.datasets[0].data = barChart.data.datasets[0].data.map(() => {
       const value = Math.floor(Math.random() * 60 + 40);
@@ -124,18 +124,18 @@ if (barCtx) {
       return 'rgb(239, 68, 68)';
     });
     barChart.update('active');
-  }, 5000); // antes: 2500
+  }, 5000); 
 }
 
-    // Horizontal Bar Chart - Device Comparison
+    // bar chart horizontal 
     const horizontalBarCtx = document.getElementById('horizontalBarChart');
     if (horizontalBarCtx) {
       const horizontalBarChart = new Chart(horizontalBarCtx, {
         type: 'bar',
         data: {
-          labels: ['HVAC', 'Lighting', 'Computers', 'Kitchen', 'Other'],
+          labels: ['Climatização', 'Iluminação', 'Computadores', 'Cozinha', 'Outros'],
           datasets: [{
-            label: 'Energy Usage (kWh)',
+            label: 'Consumo Energético (kWh)',
             data: [45, 28, 35, 22, 18],
             backgroundColor: 'rgba(16, 185, 129, 0.8)',
             borderColor: 'rgb(16, 185, 129)',
@@ -183,7 +183,7 @@ if (barCtx) {
         }
       });
 
-      // Animate horizontal bar chart data
+      // animação bar chart horizontal
       setInterval(() => {
         horizontalBarChart.data.datasets[0].data = horizontalBarChart.data.datasets[0].data.map(() => 
           Math.floor(Math.random() * 30 + 15)
@@ -192,13 +192,13 @@ if (barCtx) {
       }, 4000);
     }
 
-    // Doughnut Chart - Energy Savings Overview
+    // doughnut chart
     const doughnutCtx = document.getElementById('doughnutChart');
     if (doughnutCtx) {
       const doughnutChart = new Chart(doughnutCtx, {
         type: 'doughnut',
         data: {
-          labels: ['Saved', 'Used'],
+          labels: ['Economizado', 'Usado'],
           datasets: [{
             data: [28, 72],
             backgroundColor: [
@@ -229,7 +229,7 @@ if (barCtx) {
         }
       });
 
-      // Animate doughnut chart data
+      // animação doughnut chart
       setInterval(() => {
         const savedPercentage = Math.floor(Math.random() * 15 + 20);
         doughnutChart.data.datasets[0].data = [savedPercentage, 100 - savedPercentage];
@@ -237,7 +237,6 @@ if (barCtx) {
         
         const centerText = document.querySelector('.center-percentage');
         if (centerText) {
-          // Smooth transition for center text
           centerText.style.transition = 'opacity 0.3s ease';
           centerText.style.opacity = '0';
           setTimeout(() => {
@@ -250,7 +249,7 @@ if (barCtx) {
     }
   };
 
-  // Initialize charts when the data visualization section is visible
+  // começa os charts quando a seção de demonstração tá visivel
   const chartObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
